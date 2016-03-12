@@ -1,4 +1,3 @@
-
 if (typeof(Storage) === "undefined") {
   alert("Your browser doesn't support localStorage. Your notes won't be saved!");
 } else {
@@ -7,11 +6,17 @@ if (typeof(Storage) === "undefined") {
   var textbox = document.getElementById("text")
   textbox.innerHTML = localStorage.getItem("text");
 
-  // Save data frequently.
-  var SAVE_TIMEOUT = 2000;
-  setInterval(function () {
-    localStorage.setItem("text", textbox.innerHTML);
-  }, SAVE_TIMEOUT);
+	function save() {
+		localStorage.setItem("text", textbox.innerHTML);
+	}
+
+	// Save data less frequently, for in case there is a power
+	// outage.
+  var SAVE_TIMEOUT = 30000;
+	setInterval(save, SAVE_TIMEOUT);
+
+	// Save before the user leaves.
+  window.onbeforeunload = save;
 
   function quote(text, author) {
     return "\"" + text + "\"" + " - " + author;
