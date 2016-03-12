@@ -1,4 +1,4 @@
 # Napkin
 
-A little textbox for your notes. Write down whatever you want, and it'll be there when you're
-back! :smile: That's pretty handy.
+A pseudo-webapp for storing your notes. Write down anything you'd like to remember,
+and it'll be there when you come back! :rocket:
