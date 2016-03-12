@@ -5,17 +5,17 @@ if (typeof(Storage) === "undefined") {
   // Restore saved data.
   var textbox = document.getElementById("text")
   textbox.innerHTML = localStorage.getItem("text");
+  
+  function save() {
+    localStorage.setItem("text", textbox.innerHTML);
+  }
 
-	function save() {
-		localStorage.setItem("text", textbox.innerHTML);
-	}
-
-	// Save data less frequently, for in case there is a power
-	// outage.
+  // Save data less frequently, for in case there is a power
+  // outage.
   var SAVE_TIMEOUT = 30000;
-	setInterval(save, SAVE_TIMEOUT);
+  setInterval(save, SAVE_TIMEOUT);
 
-	// Save before the user leaves.
+  // Save before the user leaves.
   window.onbeforeunload = save;
 
   function quote(text, author) {
