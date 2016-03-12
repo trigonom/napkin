@@ -25,6 +25,7 @@ if (typeof(Storage) === "undefined") {
   // Have fun!
   var quotes = [
     quote("The road to hell is paved with adverbs.", "Stephen King"),
+    quote("Refresh the page to permanently delete the current note.", "Tutoring Robot")
     quote("Sometimes, I forget things", "Old Man"),
     quote("There is no writer's block. JUST DO IT.", "Some Lad"),
     quote("Don't linger on the past too much.", "Some Gal"),
